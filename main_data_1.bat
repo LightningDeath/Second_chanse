@@ -1,0 +1,1 @@
+1, LENOVO, Microsoft Windows 7 Профессиональная, 00971-OEM-1982661-00231, x64-based PC

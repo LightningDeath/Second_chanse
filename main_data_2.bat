@@ -1,0 +1,1 @@
+2, ACER, Microsoft Windows 10 Professional, 00971-OEM-1982661-00231, x64-based PC

@@ -1,0 +1,38 @@
+
+class Mydesk:
+    def __init__(self, vol, st):
+        self.vol = vol
+        self.st = st
+
+    def __set__(self, instance, vol):
+        if vol.isdigit():
+            instance.__dict__[self.vol] = int(vol)
+        else:
+            return self.__set__(instance, input(f'Вы ввели не число! попробуйте ещё раз!\n'
+                                                f'Введите {self.st} дороги в метрах: '))
+
+    # def __set_name__(self, owner, vol, st):
+    #     self.vol = vol
+    #     self.st = st
+
+
+class Road:
+    mass = 25
+    width_1 = 0.5
+    __length = Mydesk('__length', 'длину')
+    __width = Mydesk('__width', 'ширину')
+
+    def __init__(self, length, width):
+        self.__length = length
+        self.__width = width
+
+    def task(self):
+        res = int(self.__length * self.__width * self.mass * self.width_1)
+        res_1 = int(res / 1000)
+        return f'Масса асфальта, необходимого для покрытия заданного участка дороги равна:\n' \
+               f'{self.__length}м*{self.__width}м*{self.mass}кг*{self.width_1}м = {res} кг = {res_1} т'
+
+
+road = Road(input('Введите длину дороги в метрах: '),
+            input('Введите ширину дороги в метрах: '))
+print(road.task())
